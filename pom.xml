@@ -4,7 +4,7 @@
 	<groupId>org.retzlaff</groupId>
 	<artifactId>wicket-select2</artifactId>
 	<packaging>jar</packaging>
-	<version>1.2.1-SNAPSHOT</version>
+	<version>1.2.1</version>
 
 	<name>wicket-select2</name>
 	<description>Wicket components and behaviors for Select2</description>
@@ -164,33 +164,50 @@
 		</pluginManagement>
 	</build>
 	
-	<scm>
-		<url>git@github.com:openwide-java/wicket-select2.git</url>
-		<connection>scm:git:git@github.com:openwide-java/wicket-select2.git</connection>
-		<developerConnection>scm:git:git@github.com:openwide-java/wicket-select2.git</developerConnection>
-	  <tag>HEAD</tag>
-  </scm>
-	
-	<profiles>
-		<profile>
-			<activation>
-				<property>
-					<name>distribution</name>
-					<value>owsi-core-release</value>
-				</property>
-			</activation>
-			<distributionManagement>
-				<repository>
-					<id>nexus-owsi-core</id>
-					<name>Nexus OWSI Core</name>
-					<url>https://projects.openwide.fr/services/nexus/content/repositories/owsi-core</url>
-				</repository>
-				<snapshotRepository>
-					<id>nexus-owsi-core-snapshots</id>
-					<name>Nexus OWSI Core Snapshots</name>
-					<url>https://projects.openwide.fr/services/nexus/content/repositories/owsi-core-snapshots</url>
-				</snapshotRepository>
-			</distributionManagement>
-		</profile>
-	</profiles>
+    <scm>
+        <connection>scm:git:git@git.smile.fr:skill-center-lyon/owsi-core/wicket-select2.git</connection>
+        <developerConnection>scm:git:git@git.smile.fr:skill-center-lyon/owsi-core/wicket-select2.git</developerConnection>
+        <url>https://git.smile.fr/skill-center-lyon/owsi-core/wicket-select2</url>
+        <tag>HEAD</tag>
+    </scm>
+
+        <repositories>
+            <repository>
+                  <id>nexus.internal.releases</id>
+                  <url>https://nexus.vitry.intranet/content/repositories/InternalSmileReleases/</url>
+                  <snapshots>
+                     <enabled>false</enabled>
+                  </snapshots>
+            </repository>
+            <repository>
+                  <id>nexus.internal.snapshots</id>
+                  <url>https://nexus.vitry.intranet/content/repositories/InternalSmileSnapshots/</url>
+                  <releases>
+                     <enabled>true</enabled>
+                  </releases>
+            </repository>
+
+            <repository>
+                <id>nexus.internal.third-party</id>
+                <url>https://nexus.vitry.intranet/content/repositories/nonCentralArtifacts/</url>
+            </repository>
+
+        </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>nexus.internal.releases</id>
+            <url>https://nexus.vitry.intranet/content/repositories/InternalSmileReleases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus.internal.snapshots</id>
+            <url>https://nexus.vitry.intranet/content/repositories/InternalSmileSnapshots/</url>
+        </snapshotRepository>
+        <site>
+           <id>maven.doc.smile</id>
+           <url>scp://pic-java.vitry.intranet/var/www/${project.groupId}/${project.artifactId}</url>
+        </site>
+    </distributionManagement>
+
+
 </project>
