@@ -4,7 +4,7 @@
 	<groupId>org.retzlaff</groupId>
 	<artifactId>wicket-select2</artifactId>
 	<packaging>jar</packaging>
-	<version>1.2.1</version>
+	<version>1.2.2</version>
 
 	<name>wicket-select2</name>
 	<description>Wicket components and behaviors for Select2</description>
@@ -172,41 +172,9 @@
     </scm>
 
         <repositories>
-            <repository>
-                  <id>nexus.internal.releases</id>
-                  <url>https://nexus.vitry.intranet/content/repositories/InternalSmileReleases/</url>
-                  <snapshots>
-                     <enabled>false</enabled>
-                  </snapshots>
-            </repository>
-            <repository>
-                  <id>nexus.internal.snapshots</id>
-                  <url>https://nexus.vitry.intranet/content/repositories/InternalSmileSnapshots/</url>
-                  <releases>
-                     <enabled>true</enabled>
-                  </releases>
-            </repository>
-
-            <repository>
-                <id>nexus.internal.third-party</id>
-                <url>https://nexus.vitry.intranet/content/repositories/nonCentralArtifacts/</url>
-            </repository>
-
         </repositories>
 
     <distributionManagement>
-        <repository>
-            <id>nexus.internal.releases</id>
-            <url>https://nexus.vitry.intranet/content/repositories/InternalSmileReleases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>nexus.internal.snapshots</id>
-            <url>https://nexus.vitry.intranet/content/repositories/InternalSmileSnapshots/</url>
-        </snapshotRepository>
-        <site>
-           <id>maven.doc.smile</id>
-           <url>scp://pic-java.vitry.intranet/var/www/${project.groupId}/${project.artifactId}</url>
-        </site>
     </distributionManagement>
 
 
