@@ -1,3 +1,24 @@
+Usage
+=====
+
+```xml
+<dependencies>
+  <dependency>
+    <groupId>org.retzlaff</groupId>
+    <artifactId>wicket-select2</artifactId>
+    <version>1.2.2</version>
+  </dependency>
+  <!-- ... -->
+</dependencies>
+<repositories>
+    <repository>
+        <id>bucket-release-repo</id>
+        <url>https://apidae-sit-packages.s3.eu-west-3.amazonaws.com/release</url>
+    </repository>
+    <!-- ... -->
+</repositories>
+```
+
 wicket-select2
 ==============
 
@@ -14,7 +35,7 @@ components.
 Existing DropDownChoice and ListMultipleChoice components in your application can be
 Select2-ified with a single line of code:
     component.add(Select2Behavior.forChoice(component)).
-    
+
 To filter and populate select options with AJAX queries, use Select2SingleChoice or
 Select2MultipleChoice. Each of these requires an ISelect2AjaxAdapter instance which
 implements the query logic and id/display mapping. See StateAdapter (from the demo) and
