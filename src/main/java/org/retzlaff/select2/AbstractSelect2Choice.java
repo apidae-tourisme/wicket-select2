@@ -3,7 +3,7 @@ package org.retzlaff.select2;
 import java.util.Collection;
 import java.util.List;
 
-import org.apache.wicket.IResourceListener;
+import org.apache.wicket.IRequestListener;
 import org.apache.wicket.markup.html.form.ChoiceRenderer;
 import org.apache.wicket.markup.html.form.HiddenField;
 import org.apache.wicket.markup.html.form.IChoiceRenderer;
@@ -24,7 +24,7 @@ import org.retzlaff.select2.resource.AjaxSearchResourceReference;
  * @param <T> model type (E or Collection<E>)
  * @param <E> element type
  */
-public abstract class AbstractSelect2Choice<T, E> extends HiddenField<T> implements IResourceListener {
+public abstract class AbstractSelect2Choice<T, E> extends HiddenField<T> implements IRequestListener {
 
 	private static final long serialVersionUID = 1L;
 
@@ -107,7 +107,7 @@ public abstract class AbstractSelect2Choice<T, E> extends HiddenField<T> impleme
 			}
 			return urlFor(resourceReference, getAjaxParameters());
 		} else {
-			return urlFor(IResourceListener.INTERFACE, getAjaxParameters());
+			return urlForListener(getAjaxParameters());
 		}
 	}
 	
@@ -121,7 +121,7 @@ public abstract class AbstractSelect2Choice<T, E> extends HiddenField<T> impleme
 	protected abstract Collection<E> getModelObjects();
 	
 	@Override
-	public void onResourceRequested() {
+	public void onRequest() {
 		RequestCycle rc = RequestCycle.get();
 		Attributes a = new Attributes(rc.getRequest(), rc.getResponse(), null);
 		new AjaxChoiceResource().respond(a);
